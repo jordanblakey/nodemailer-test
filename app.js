@@ -48,9 +48,12 @@ app.post('/send', (req, res) => {
     secure: true, //true for 465, false for other ports
     auth: {
       user: 'test@gmail.com', // generated etheral user
-      pass: 'Need to setup passport.js' // generated ethereal password
+      pass: 'password' // Need to setup passport.js
+    },
+    tls: {
+      rejectUnauthorized: false
     }
-  })
+  });
 
   // setup email data with unicode symbols
   let mailOptions = {
